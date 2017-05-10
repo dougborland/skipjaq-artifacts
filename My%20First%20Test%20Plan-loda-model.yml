@@ -1,0 +1,12 @@
+---
+metadata:
+  name: My First Test Plan
+  generated:
+    inputs: [google-analytics]
+    host: http://test.com
+    date: 2017-05-10T15:31:48.598Z
+    generation-time: 1.685s
+
+requests:
+
+actors:
