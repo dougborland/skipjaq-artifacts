@@ -1,0 +1,12 @@
+---
+metadata:
+  name: Second Test Plan
+  generated:
+    inputs: [google-analytics]
+    host: http://test.com
+    date: 2017-05-10T15:33:50.086Z
+    generation-time: 0.855s
+
+requests:
+
+actors:
