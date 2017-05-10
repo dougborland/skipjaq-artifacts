@@ -1,0 +1,12 @@
+---
+metadata:
+  name: Another
+  generated:
+    inputs: [google-analytics]
+    host: http://test.com
+    date: 2017-05-10T15:36:42.429Z
+    generation-time: 1.819s
+
+requests:
+
+actors:
