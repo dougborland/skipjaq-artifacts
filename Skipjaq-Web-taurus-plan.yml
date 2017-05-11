@@ -15,11 +15,7 @@ execution:
 scenarios:
   source-activity-scenario:
     requests:
-    - url: http://skipjaq.com/offices
-      method: GET
-      assert:
-        http-code: 200
-    - url: http://skipjaq.com/team
+    - url: http://skipjaq.com/jobs
       method: GET
       assert:
         http-code: 200
@@ -27,19 +23,7 @@ scenarios:
       method: GET
       assert:
         http-code: 200
-    - url: http://skipjaq.com/jobs/uk/senior_staff_engineer
-      method: GET
-      assert:
-        http-code: 200
-    - url: http://skipjaq.com/jobs
-      method: GET
-      assert:
-        http-code: 200
-    - url: http://skipjaq.com/
-      method: GET
-      assert:
-        http-code: 200
-    - url: http://skipjaq.com/management
+    - url: http://skipjaq.com/team
       method: GET
       assert:
         http-code: 200
@@ -47,23 +31,23 @@ scenarios:
       method: GET
       assert:
         http-code: 200
+    - url: http://skipjaq.com/offices
+      method: GET
+      assert:
+        http-code: 200
+    - url: http://skipjaq.com/management
+      method: GET
+      assert:
+        http-code: 200
+    - url: http://skipjaq.com/jobs/uk/senior_staff_engineer
+      method: GET
+      assert:
+        http-code: 200
+    - url: http://skipjaq.com/
+      method: GET
+      assert:
+        http-code: 200
     - url: http://skipjaq.com/jobs.html
-      method: GET
-      assert:
-        http-code: 200
-    - url: http://skipjaq.com/jobs/uk/senior_java_developer
-      method: GET
-      assert:
-        http-code: 200
-    - url: http://skipjaq.com/brand.html
-      method: GET
-      assert:
-        http-code: 200
-    - url: http://skipjaq.com/http://www.skipjaq.com/
-      method: GET
-      assert:
-        http-code: 200
-    - url: http://skipjaq.com/about.html
       method: GET
       assert:
         http-code: 200
@@ -71,7 +55,23 @@ scenarios:
       method: GET
       assert:
         http-code: 200
+    - url: http://skipjaq.com/jobs/uk/senior_java_developer
+      method: GET
+      assert:
+        http-code: 200
+    - url: http://skipjaq.com/http://www.skipjaq.com/
+      method: GET
+      assert:
+        http-code: 200
     - url: http://skipjaq.com/files/skipjaq_logo_sq_120.png
+      method: GET
+      assert:
+        http-code: 200
+    - url: http://skipjaq.com/brand.html
+      method: GET
+      assert:
+        http-code: 200
+    - url: http://skipjaq.com/about.html
       method: GET
       assert:
         http-code: 200
