@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance Optimisation as a Service | SKIPJAQ&reg;</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/favicon.ico" type="image/x-icon" rel="icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/animate.min-55009d64191e6f9e712a841773ee6611.css" />
+<link rel="stylesheet" href="/css/font-awesome.min-269550530cc127b6aa5a35925a7de6ce.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.5.1/featherlight.min.css" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.5.1/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+    var templateName = "pages/index";
+    !function () {
+        var analytics = window.analytics = window.analytics || [];
+        if (!analytics.initialize)if (analytics.invoked)window.console && console.error && console.error("Segment snippet included twice."); else {
+            analytics.invoked = !0;
+            analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "page", "once", "off", "on"];
+            analytics.factory = function (t) {
+                return function () {
+                    var e = Array.prototype.slice.call(arguments);
+                    e.unshift(t);
+                    analytics.push(e);
+                    return analytics
+                }
+            };
+            for (var t = 0; t < analytics.methods.length; t++) {
+                var e = analytics.methods[t];
+                analytics[e] = analytics.factory(e)
+            }
+            analytics.load = function (t) {
+                var e = document.createElement("script");
+                e.type = "text/javascript";
+                e.async = !0;
+                e.src = ("https:" === document.location.protocol ? "https://" : "http://") + "cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js";
+                var n = document.getElementsByTagName("script")[0];
+                n.parentNode.insertBefore(e, n)
+            };
+            analytics.SNIPPET_VERSION = "3.1.0";
+            analytics.load("MzMZ4QWn6uBd2XVjphTkKcdZiL9MxmWB");
+            analytics.page()
+        }
+    }();
+
+//Added APPDynamics Javascript
+
+    window['adrum-start-time'] = new Date().getTime();
+    (function(config){
+        config.appKey = 'AD-AAB-AAD-XHJ';
+        config.adrumExtUrlHttp = 'http://cdn.appdynamics.com';
+        config.adrumExtUrlHttps = 'https://cdn.appdynamics.com';
+        config.beaconUrlHttp = 'http://col.eum-appdynamics.com';
+        config.beaconUrlHttps = 'https://col.eum-appdynamics.com';
+        config.xd = {enable : true};
+    })(window['adrum-config'] || (window['adrum-config'] = {}));
+    if ('https:' === document.location.protocol) {
+        document.write(unescape('%3Cscript')
+            + " src='https://cdn.appdynamics.com/adrum/adrum-4.3.1.0.js' "
+            + " type='text/javascript' charset='UTF-8'"
+            + unescape('%3E%3C/script%3E'));
+    } else {
+        document.write(unescape('%3Cscript')
+            + " src='http://cdn.appdynamics.com/adrum/adrum-4.3.1.0.js' "
+            + " type='text/javascript' charset='UTF-8'"
+            + unescape('%3E%3C/script%3E'));
+    }
+
+
+// NewRelic Agent
+
+    window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];n.exports=u;var y=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(m,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);
+    ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"654e768b89",applicationID:"53802922",sa:1}
+
+</script>
+<meta name="description"
+          content="Performance Optimisation as a Service for Java web applications running on AWS. We use machine learning and automation to speed up your applications by more than 50%, and thanks to our SaaS platform, you can now also choose EC2 instances with science, not guesswork.">
+<link rel="stylesheet" href="/css/style.min-3183f5bbf6516b5ac983cd3b71c5d107.css"/>
+<script type="text/javascript" src="/js/jquery.toaster.min-1048c816e69f6508804a7615f0b026b0.js"></script>
+<script src="/js/_index_scripts.min-352e9d4fed1a144e66597a360c9c627d.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row sjq-begin-wallpaper">
+        <div style="min-height: 100vh">
+            <div class="sjq-begin" style="position:relative; min-height:100vh;">
+                <div class="sjq-table-row h1p">
+                    <div class="sjq-header" id="top">
+                        <a href="#"><img class="sjq-logo" src="/assets/skipjaq_logo_wcolor_r_rgb_300-db561e864542a8b3615f4d631dd13baa.png"
+                                         alt="SKIPJAQ Logo"></a>
+                    </div>
+                </div>
+                <div class="sjq-table-row">
+                    <div class="sjq-hero">
+                        <h1>Increase the performance of your applications by more than 50%</h1>
+                        <h3>Performance Optimisation as a Service for Java web applications running on AWS</h3>
+
+
+                        <a style="text-decoration: none"
+                           data-track-action="Click Join Our Private Beta:Hero Area">
+                            <button onclick="showSignUp();">
+                                <span class="fa fa-chevron-right"></span> Join our private beta
+                            </button>
+                        </a> <br><a href="#why" data-track-action="Click What is POaaS:Hero Area">What’s Performance Optimisation as a Service? </a>
+                    </div>
+                </div>
+                <div class="wow bounceInUp info-boxes sjq-table-row h1p">
+                    <div class="scrolled" onmouseenter="scrollToRestOfBoxes();">
+                        <div class="sjq-hero-keys vertical" onmouseenter="stopWiggling();">
+                            <div class="row">
+                                <div class="sjq-hero-key col-md-4 col-xs-12">
+                                    <li class="fa fa-flag-checkered"></li>
+                                    <div class="sjq-hero-key-text">
+                                        <h4>FASTER APPLICATIONS</h4>
+                                        Our machine learning-driven performance optimisation will increase the speed of your applications by at least 50%
+                                    </div>
+                                </div>
+                                <div class="sjq-hero-key col-md-4 col-xs-12">
+                                    <li class="fa fa-check-circle"></li>
+                                    <div class="sjq-hero-key-text">
+                                        <h4>FEWER OUTAGES</h4>
+                                        Understand exactly how much load your applications can take, and provision them with pinpoint precision to meet your
+                                        performance SLAs
+                                    </div>
+                                </div>
+                                <div class="sjq-hero-key col-md-4 col-xs-12">
+                                    <li class="fa fa-smile-o"></li>
+                                    <div class="sjq-hero-key-text">
+                                        <h4>HAPPIER, MORE PRODUCTIVE USERS</h4>
+                                        More of your users will get more out of your applications, more of the time
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wow bounceInUp">
+            <div class="sjq-hero-keys vertical" onmouseenter="stopWiggling();" id="second_row_of_boxes">
+                <div class="row">
+                    <div class="sjq-hero-key col-md-4 col-xs-12">
+                        <li class="fa fa-cogs"></li>
+                        <div class="sjq-hero-key-text">
+                            <h4>UPGRADED CONTINUOUS DELIVERY</h4>
+                            Test and optimise application builds in a matter of hours; maintain stack hygiene without compromising on delivery speed
+                        </div>
+                    </div>
+                    <div class="sjq-hero-key col-md-4 col-xs-12">
+                        <li class="fa fa-refresh"></li>
+                        <div class="sjq-hero-key-text">
+                            <h4>REGRESSION-FREE UPDATING</h4>
+                            Java version update? OS security patch? Skipjaq your applications whenever one of your software providers makes a change outside of
+                            your control and ensure there’s no performance regression
+                        </div>
+                    </div>
+                    <div class="sjq-hero-key col-md-4 col-xs-12">
+                        <li class="fa fa-dollar"></li>
+                        <div class="sjq-hero-key-text">
+                            <h4>SMARTER CLOUD SPENDING</h4>
+                            Say goodbye to guesswork - pay for the cloud infrastructure you actually need - and no more
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="sjq-join-banner" id="stickyheader">
+            <div class="sjq-join-banner-text">Apply to join our private beta
+                <li class="fa">&#xf054;</li>
+            </div>
+            <a data-track-action="Click Apply Now Button:Sticky Button">
+                <button onclick="showSignUp()">Apply Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div id="why" class="sjq-why">
+        <div class="sjq-why-content">
+
+            <div class="row">
+                <div class="sjq-why-item">
+                    <div class="wow fadeInRight sjq-why-illu sjq-why-illu-height col-md-3 col-xs-12 pull-right"
+                         id="sjq-why-illu1"></div>
+                    <div class="sjq-why-text wow fadeInLeft col-md-9 col-xs-12">
+                        <p class="text-left sjq-why-illu-height">Before Skipjaq, optimising the performance of a Java web application was a frustratingly
+                            difficult, time-consuming, and uncertain business. Performance experts were almost impossible to find, and even harder to hire.
+                            That’s why most Java web applications running on AWS today have never been optimised &mdash; a reality we’re here to change.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="sjq-why-item">
+                    <div class="sjq-why-illu sjq-why-illu-height wow fadeInLeft col-md-3 col-xs-12"
+                         id="sjq-why-illu2"></div>
+                    <div class="sjq-why-text wow fadeInRight col-md-9 col-xs-12">
+                        <p class="text-right sjq-why-illu-height">Skipjaq is the first company to deliver Performance Optimisation as a Service for Java web
+                            applications running on AWS. Our automated platform speeds up targeted applications by at least 50%, and delivers uniquely
+                            actionable insights regarding the baseline and peak performance of your applications.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="sjq-why-item">
+                    <div class="sjq-why-illu sjq-why-illu-height wow fadeInRight col-md-3 col-xs-12 pull-right"
+                         id="sjq-why-illu3"></div>
+                    <div class="sjq-why-text  wow fadeInLeft col-md-9 col-xs-12">
+                        <p class="text-left sjq-why-illu-height">Your users will be happier and more productive, and you get to spend less time worrying about
+                            damaging outages and more time focusing on the innovative line-of-business applications you got into this job for in the first
+                            place.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <a href="#workflow" data-track-action="Click How Does It Work:Why Section">
+                <button>How does it work?</button>
+            </a>
+        </div>
+    </div>
+
+
+    <div id="workflow" class="row">
+        <div class="sjq-workflow">
+            <div class="container-fluid">
+                <h2>The Skipjaq Workflow</h2>
+                <h3>How Skipjaq will help you become the Chief Performance Officer for your company</h3>
+
+                <div class="sjq-row">
+                    <div class="sjq-workflow-item">
+                        <div class="sjq-workflow-illu" id="sjq-workflow-1">
+
+
+                            <a href="#" data-featherlight="/assets/how_illu1-3e3847170c1aff85f56155beab982e70.jpg" data-track-action="Click Workflow Illu 1:Workflow Section">
+
+                                <img class="sjq-workflow-illu" src="/assets/how_illu1-3e3847170c1aff85f56155beab982e70.jpg"
+                                     alt="Use AWS’ IAM role functionality to connect your Skipjaq and AWS accounts quickly and easily"> </a>
+
+                        </div>
+                        <div class="sjq-workflow-illu-shadow"></div>
+                        Use AWS’ IAM role functionality to connect your Skipjaq and AWS accounts quickly and easily
+                    </div>
+
+                    <div class="  sjq-workflow-item">
+                        <div class="sjq-workflow-illu" id="sjq-workflow-2">
+                            <a href="#" data-featherlight="/assets/how_illu2-470d2e5344fac0d5fcf8591f2a1db1e5.jpg" data-track-action="Click Workflow Illu 2:Workflow Section"> <img
+                                    class="sjq-workflow-illu" src="/assets/how_illu2-470d2e5344fac0d5fcf8591f2a1db1e5.jpg"
+                                    alt="                        Automatically scan for and expose services/VPCs in the AWS region of your choice"> </a>
+
+                        </div>
+                        <div class="sjq-workflow-illu-shadow"></div>
+                        Automatically scan for and expose services/VPCs in the AWS region of your choice
+                    </div>
+                </div>
+                <div class="sjq-row">
+
+
+                    <div class="sjq-workflow-item">
+                        <div class="sjq-workflow-illu" id="sjq-workflow-3">
+                            <a href="#" data-featherlight="/assets/how_illu3-843441742c99f4440144400119119cbf.jpg" data-track-action="Click Workflow Illu 3:Workflow Section"> <img
+                                    class="sjq-workflow-illu" src="/assets/how_illu3-843441742c99f4440144400119119cbf.jpg"
+                                    alt="                        Create a custom test-plan based on real workflows followed by users of your application"> </a>
+                        </div>
+                        <div class="sjq-workflow-illu-shadow"></div>
+                        Create a custom test-plan based on real workflows followed by users of your application<br><br><br>
+                    </div>
+                    <div class="sjq-workflow-item">
+                        <div class="sjq-workflow-illu" id="sjq-workflow-4">
+                            <a href="#" data-featherlight="/assets/how_illu4-ed49f72064ea783e8f90a7ea71c89404.jpg" data-track-action="Click Workflow Illu 4:Workflow Section"> <img
+                                    class="sjq-workflow-illu" src="/assets/how_illu4-ed49f72064ea783e8f90a7ea71c89404.jpg"
+                                    alt="Start the optimisation cycle and watch graphs populate and dials spin as the Skipjaq platform reports metrics in real-time">
+                            </a>
+                        </div>
+                        <div class="sjq-workflow-illu-shadow"></div>
+                        No black boxes here: start the optimisation cycle and watch graphs populate and dials spin as the Skipjaq platform reports metrics in
+                        real-time (or go and make yourself a cup of tea &mdash;
+                        your choice)
+                    </div>
+                </div>
+
+                <div class="sjq-row">
+
+                    <div class="  sjq-workflow-item">
+                        <div class="sjq-workflow-illu" id="sjq-workflow-5">
+                            <a href="#" data-featherlight="/assets/how_illu5-f23cb3b61217d255475732dac3f2ed87.jpg" data-track-action="Click Workflow Illu 5:Workflow Section"> <img
+                                    class="sjq-workflow-illu" src="/assets/how_illu5-f23cb3b61217d255475732dac3f2ed87.jpg" alt="Get results to analyse in a matter of hours - compare the performance of the configuration surfaced by Skipjaq against your original or ‘baseline’ configuration; drill down into metrics
+                        like latency, transactions per second, CPU and memory usage"> </a>
+                        </div>
+                        <div class="sjq-workflow-illu-shadow"></div>
+                        Get results to analyse in a matter of hours &mdash; compare the performance of the configuration surfaced by Skipjaq against your
+                        original or ‘baseline’ configuration; drill down into metrics like latency, transactions per second, CPU and memory usage
+                    </div>
+                    <div class="  sjq-workflow-item">
+                        <div class="sjq-workflow-illu" id="sjq-workflow-6">
+                            <a href="#" data-featherlight="/assets/how_illu6-e5ba5eafcd4623f3c50f17fa73909ecd.jpg" data-track-action="Click Workflow Illu 6:Workflow Section"> <img
+                                    class="sjq-workflow-illu" src="/assets/how_illu6-e5ba5eafcd4623f3c50f17fa73909ecd.jpg"
+                                    alt="Re-provision your application using your Skipjaq-powered insights; export your new and powerful configuration as a JSON file, or use our API to retrieve it through your configuration management tool of choice">
+                            </a>
+                        </div>
+                        <div class="sjq-workflow-illu-shadow"></div>
+                        Re-provision your application using your Skipjaq-powered insights; export your new and powerful configuration as a JSON file, or use our
+                        API to retrieve it through your configuration management tool of choice<br><br>
+                    </div>
+                </div>
+            </div>
+            <!-- <button>See a demo video</button> -->
+        </div>
+    </div>
+
+
+    <div class="row" id="events-container">
+        <div id="events" class="sjq-events">
+    <div class="container-fluid">
+        <h2>Upcoming Events</h2>
+        <h3>You can also occasionally find us in the 'real world' (whatever that is).</h3>
+
+
+        <div class="row">
+
+<!-- <div class="col-sm-3"></div>-->
+            <div class="col-sm-6 sjq-event">
+            <!--    <div class="col-sm-6" style="text-align:left;"> -->
+                <div id="sjq-event-photo6" class="sjq-event-photo"></div>
+                <h4>Devoxx Poland</h4>
+                <h5>21&ndash;23rd June 2017 &mdash; Kraków, Poland</h5>
+                <p>The world largest Java conference is back in Poland and we’re proud to announce that our very own CEO, Rob Harrop will be presenting his talk ‘load test like a pro’ on June 21st. So if you want to learn more about how to load test systems using JMeter, make sure to head over to room 4 at 2:00 pm. Tickets for this event are selling out fast so get booking!<br>
+                </p>
+
+                <a href="http://devoxx.pl/" target="_blank" data-track-action="Click Event 1 Website:Events Section">
+                    <button class="sjq-event_button">
+                        <li class="fa">&#xf08e;</li>
+                        Visit Website
+                    </button>
+                </a>
+
+            </div>
+            
+                        <div class="col-sm-6 sjq-event">
+            <!--    <div class="col-sm-6" style="text-align:left;"> -->
+                <div id="sjq-event-photo5" class="sjq-event-photo"></div>
+                <h4>AWS Summit London</h4>
+                <h5>28th June 2017 &mdash; London, UK</h5>
+                <p>As specialists in optimising applications running on AWS, we’re super excited to be sponsoring and exhibiting at this free, one day conference. Whether you’re thinking of moving, have already moved, or just curious about the AWS platform, this is one event you don’t want to miss. Pop by our stand for a free demo and grab yourself some SKIPJAQ goodies. Hope to see you there.<br>
+                </p>
+
+                <a href="https://aws.amazon.com/summits/london/" target="_blank" data-track-action="Click Event 2 Website:Events Section">
+                    <button class="sjq-event_button">
+                        <li class="fa">&#xf08e;</li>
+                        Visit Website
+                    </button>
+                </a>
+
+            </div>
+
+            
+<!-- <div class="col-sm-3"></div>-->
+    
+
+        </div>
+    </div>
+</div>
+
+
+        <div class="sjq-top">
+            <span><a href="#top" data-track-action="Click Back To Top:Footer">BACK TO TOP <li class="fa">&#xf0aa;</li></a></span>
+        </div>
+    </div>
+
+    <div id="footer" class="row">
+    <nav class="sjq-nav">
+        <div class="sjq-nav-col-left">
+            <ul>
+                <h4>GET IN TOUCH</h4>
+                <a href="mailto:info@skipjaq.com" data-track-action="Click Email:Footer">
+                    <li class="fa fa-envelope">&nbsp;&nbsp;</li>
+                    Send us an email<br></a>
+                <a href="https://www.linkedin.com/company/skipjaq" data-track-action="Click LinkedIn:Footer">
+                    <li class="fa fa-linkedin-square">&nbsp;&nbsp;</li>
+                    Connect with us<br></a>
+                <a href="https://twitter.com/skipjaqinc" data-track-action="Click Twitter:Footer">
+                    <li class="fa fa-twitter-square">&nbsp;&nbsp;</li>
+                    @skipjaqinc</a>
+            </ul>
+
+        </div>
+
+        <div class="sjq-nav-col-right">
+            <h4>MORE ABOUT US</h4>
+            <div class="row">
+                <div class="col-xs-12 pull-right">
+                    <a href="/team" data-track-action="Click Our Team:Footer">
+                        Our Team
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 pull-right">
+                    <a href="/jobs" data-track-action="Click We Are Hiring:Footer">
+                        We're Hiring
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 pull-right">
+                    <a href="/offices" data-track-action="Click Our Offices:Footer">
+                        Our Offices
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="clearfix"></div>
+    </nav>
+</div>
+</div>
+
+<div class="overall-spinner hidden">
+    <div class="background"></div>
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+
+<div class="signup-box mini text-center hidden">
+    <div class="body">
+        <i class="fa fa-check-circle big-icon mb20"></i>
+        <h1 class="red">You're all set!</h1>
+        <div>Thank you for signing up. Please check your email for instructions how to set up your account.</div>
+    </div>
+    <div class="su_footer">
+        <div class="row">
+            <div class="col-xs-12">
+                <input type="button" class="btn btn-info" value="Close" onclick="closeInfo();">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="signup-box hidden">
+    <div class="body">
+        <form class="form-horizontal">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="pull-right">
+                        <div class="close close-corner"><i class="fa fa-times-circle pointer pull-right" onclick="$('.signup-box').addClass('hidden');"></i>
+                        </div>
+                        <span class="fa fa-user-circle-o"></span> <a href="https://skipjaq.io"
+                                                                     onclick="analytics.track('SignInLink');">Sign in</a>
+                    </div>
+                    <h1>Sign Up</h1>
+                    <span>Create your account to become the performance hero your company deserves</span>
+                </div>
+            </div>
+            <div class="row">
+                <div>&nbsp;</div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="mb20">
+                        <label>FIRST NAME</label> <input type="text" id="su_firstName" name="su_firstName" class="form-control">
+                        <div class="error hidden firstName">Field can not be empty</div>
+                    </div>
+                    <div class="mb20">
+                        <label>LAST NAME</label> <input type="text" id="su_lastName" name="su_lastName" class="form-control">
+                        <div class="error hidden lastName">Field can not be empty</div>
+                    </div>
+                    <label>YOUR EMAIL</label> <input type="email" id="su_email" name="su_email" class="form-control">
+                    <div class="info">Your email will become your username</div>
+                    <div class="error hidden email">Field can not be empty</div>
+                    <div class="error hidden emailFormat">Wrong email format</div>
+                    <div class="error hidden emailTaken">This email is taken, please choose different one</div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="pull-right"><label class="mini">(optional)</label></div>
+
+                    <div class="mb20">
+                        <label>COMPANY NAME</label> <input type="text" name="su_teamName" id="su_teamName" class="form-control" autocomplete="off">
+                        <div class="error hidden firstName">&nbsp;</div>
+                    </div>
+                    <div class="pull-right"><label class="mini">(optional)</label></div>
+                    <label>PHONE NUMBER</label>
+                    <div><input type="text" name="su_phoneNumber" id="su_phoneNumber" class="form-control phone-no" autocomplete="off"
+                                data-toggle="tooltip" title="Please enter your phone number, remember to include the country code">
+                        <div class="error hidden phone-no">Incomplete phone number</div>
+                        <div class="error hidden area-code-e">Wrong area code format</div>
+                    </div>
+                    <div class="input-group">
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <label class="normal pointer"> <input type="checkbox" name="su_subscribe" id="su_subscribe" class="form-control"><span
+                                class="ico fa fa-square-o"></span> Subscribe to the occasional Skipjaq newsletter </label>
+                        <div>&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="su_footer">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pull-left">
+                    <label class="normal pointer"> <input type="checkbox" name="su_terms" id="su_terms"><span
+                            class="ico fa fa-square-o"></span> I have read, understand, and agree to be bound by the</label> <a class="pointer"
+                                                                                                                                onclick="showTermsAndCond()">Terms
+                    & Conditions</a>
+                    <div class="error hidden terms">Please read and accept Terms & Conditions Sign Up</div>
+                </div>
+                <div class="pull-right">
+                    <input type="button" class="btn btn-success" value="Sign Up" onclick="submitSignUp();">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="content terms-and-conditions">
+        <h3>Terms & Conditions</h3>
+        <label>Please review & agree to our terms of use.</label>
+        <div class="modal-content">
+            <p class="text-center">BETA TEST AGREEMENT</p>
+            <p><span class="c3">BY CLICKING ON THE &quot;ACCEPT&quot; BUTTON, YOU OR THE ENTITY THAT YOU REPRESENT (&quot;CUSTOMER&quot;) ARE UNCONDITIONALLY CONSENTING TO BE BOUND BY THIS BETA TEST AGREEMENT (THIS &quot;</span><span
+                    class="c5 c2">AGREEMENT</span><span class="c3">&quot;) WITH SKIPJAQ, INC. (&ldquo;</span><span class="c5 c2">SKIPJAQ</span><span
+                    class="c3">&rdquo;). PROVISION OF THE SERVICES IS CONDITIONED ON, AND CUSTOMER&rsquo;S USE OF THE SERVICES SHALL CONSTITUTE, CUSTOMER&rsquo;S ASSENT TO THE TERMS OF THIS AGREEMENT. IF CUSTOMER DOES NOT UNCONDITIONALLY AGREE TO THE FOREGOING, DO NOT CLICK THE &ldquo;ACCEPT&rdquo;
+          BUTTON AND THE REGISTRATION PROCESS WILL NOT CONTINUE. BY CLICKING THE &ldquo;ACCEPT&rdquo; BUTTON, YOU ARE REPRESENTING AND WARRANTING THAT YOU ARE AUTHORIZED TO BIND CUSTOMER.</span>
+            </p>
+            <ol class="points">
+                <li>
+                    <strong>DEFINITIONS</strong>
+                    <ol>
+                        <li><span>&ldquo;</span><span class="c2">Access Point</span><span>&rdquo;
+                means the host name/port combination to which the Customer&rsquo;s consumers connect to the Application. With respect to Amazon Web Services, an &ldquo;Access Point&rdquo;
+                is either an EC2 instance or an Elastic Load Balancer. </span></li>
+                        <li><span>&ldquo;</span><span class="c2">Application</span><span>&rdquo;
+                means a single deployable artifact (e.g., WAR, JAR, EAR) exposed on a single Access Point. </span></li>
+                        <li><span>&ldquo;</span><span class="c2">Effective Date</span><span>&rdquo;
+                means the date that Customer agrees to be bound to the terms of this Agreement by clicking the &ldquo;I Accept&rdquo;
+                button.</span></li>
+                        <li><span>&nbsp;&ldquo;</span><span class="c2">Services</span><span>&rdquo;
+                means the Software and services that are made available to Customer pursuant to this Agreement as detailed in </span><span
+                                class="c9">Exhibit A</span><span>&nbsp;or as may be agreed by the parties in writing from time to time. &nbsp;The Service is hosted in a cloud environment and provided on a software-as-a-service basis.</span>
+                        </li>
+                        <li><span>&ldquo;</span><span class="c2">Software</span><span>&rdquo;
+                means Skipjaq&rsquo;s own proprietary automated workload optimisation software, and any other software and related documentation that is part of the Services, as listed in </span><span
+                                class="c9">Exhibit A</span><span>.</span></li>
+                    </ol>
+                </li>
+                <li><strong>SOFTWARE LICENCE GRANT</strong>
+                    <ol>
+                        <li><span>Subject to the terms and conditions of this Agreement, and in consideration for Customer providing Feedback to Skipjaq in accordance with Section 3.2, Skipjaq hereby grants to Customer a non-exclusive, non-transferable, nonsublicensable, fully paid-up, royalty-free, internal-businessuse licence during the Term to access the Services as specified herein solely for Customer&rsquo;s internal testing and evaluation purposes.</span>
+                        </li>
+                        <li><span>Customer shall ensure that the Services are used on no more than one (1) Application. For the purpose of clarity, running more than one copy of the same Application behind the same Elastic Load Balancer counts as one Application. However, running one copy of the same Application behind multiple Elastic Load Balancers counts as multiple Applications.</span>
+                        </li>
+                        <li>
+                            <span>Skipjaq is entitled to limit in its sole discretion the number of Optimization Tests (as defined in </span><span>Exhibit A</span><span>) that Customer can run per month. </span>
+                        </li>
+                        <li><span>Customer shall permit use of the Services only by its personnel as necessary to enable proper use of the Services in accordance with Section 2.1.</span>
+                        </li>
+                        <li><span>Customer agrees that it shall not disclose to any third party any test results, benchmarks or other performance or evaluation information relating to the Services.</span>
+                        </li>
+                        <li><span>At its discretion, Skipjaq may provide Customer with technical support for the Services (including error analysis) during normal business hours, and may endeavor to resolve material errors.</span>
+                        </li>
+                    </ol>
+                </li>
+                <li><strong>RESTRICTIONS AND RESPONSIBILITIES</strong></li>
+                <ol>
+                    <li><span>Customer agrees that it shall not, and shall not permit any third party to: (i) copy or reproduce the Services or Software, (ii) modify, translate, enhance or create any derivative works based on the Services or any component thereof, (iii) disassemble the Services or Software, (iv) reverse engineer, reverse compile or attempt to reduce to human-readable form or otherwise derive the source code of the Software, in each case except to the extent that applicable law prevents the prohibition or limitation of such activities, (v) use the Services or Software for the benefit of any third party other than Customer&rsquo;s own customers who may benefit from improvements (if any) in the performance of Customer&rsquo;s Application after using the Services, or (vi) use the Services or Software other than in accordance with this Agreement and in compliance with all applicable laws and regulations.</span>
+                    </li>
+                    <li><span>Customer shall: (a) at the request of Skipjaq and otherwise on a regular basis during the Term, provide Skipjaq with a written assessment of the results and performance of the Services and Software, which assessment shall contain at least the following (i) the nature and extent of Customer&rsquo;s use of the Services, (ii) information reflecting the improvement (if any) in the performance of Customer&rsquo;s Application after using the Services (the &ldquo;Performance Metrics&rdquo;), (iii) any errors or difficulties discovered, together with a description of any characteristic conditions and symptoms of such errors and difficulties in sufficient detail to allow Skipjaq to recreate such errors and difficulties itself, and (iv) all other information and feedback relating to the Services that Skipjaq reasonably requests ((i), (iii) and (iv) collectively, &ldquo;Beta Test Information&rdquo;). &nbsp;</span>
+                    </li>
+                    <li><span>All Beta Test Information and any suggestions for changes, modifications or improvements or any other feedback provided by Customer to Skipjaq with respect to the Services and/or the Software (collectively, &ldquo;Feedback&rdquo;), and any modifications to the Services and or Software or other developments, inventions, or information created by Skipjaq as a result of such Feedback shall be solely owned by Skipjaq (including all associated intellectual property rights). &nbsp;Customer shall and hereby does make all assignments necessary to achieve such ownership.</span>
+                    </li>
+                    <li><span>Customer shall be held responsible for the breach of this Agreement by any of its employees and agents. </span>
+                    </li>
+                    <li><span>Customer will be responsible for maintaining the security of Customer&rsquo;s account, passwords (including but not limited to administrative and user passwords) and files, and for all uses of Customer&rsquo;s account with or without Customer&rsquo;s knowledge or consent.</span>
+                    </li>
+                </ol>
+                <li><strong>CONFIDENTIALITY</strong></li>
+                <ol>
+                    <li><span>It is anticipated that during the performance of this Agreement, either party (the &ldquo;Disclosing Party&rdquo;) may disclose to the other party (the &ldquo;Receiving Party&rdquo;) or Receiving Party may come in contact with or observe certain Confidential Information which is the property of the Disclosing Party. &nbsp;The term Confidential Information means all financial, business, legal and technical information of the Disclosing Party that is marked or otherwise identified as proprietary or confidential at the time of disclosure, or that by its nature would be understood by a reasonable person to be proprietary or confidential. &nbsp;With respect to Skipjaq, such &ldquo;Confidential Information&rdquo;
+              includes, but is not limited to, the existence of the Services and Software, their features and mode of operation, this Agreement, internal documentation, product requirements, Beta Test Information and Feedback. With respect to Customer, &ldquo;Confidential Information&rdquo;
+              includes, but is not limited to, the Performance Metrics.</span></li>
+                    <li><span>Confidential Information shall not include any information that (a) was rightfully known to the Receiving Party without restriction before receipt from the Disclosing Party, (b) is rightfully disclosed to the Receiving Party without restriction by a third party, (c) is or becomes generally known to the public without violation of this Agreement by the Receiving Party or (d) is independently developed by the Receiving Party or its employees without access to or reliance on such information. </span>
+                    </li>
+                    <li><span>With respect to the Disclosing Party&rsquo;s Confidential Information, the Receiving Party shall: &nbsp;(i) not use such information except as otherwise set forth herein without the Disclosing Party&rsquo;s written consent; (ii) not disclose the Confidential Information to any third party other than the Receiving Party&rsquo;s employees and agents who have a need to know under this Agreement and who are apprised of the confidential nature of the Confidential Information and all of the restrictions in this Agreement, except as otherwise permitted herein; and (iii) exercise the same degree of care and control to maintain such Confidential Information in confidence, and prevent disclosure thereof to third parties as the Receiving Party normally uses to preserve and protect its own information of a similar nature, but in no event will such care and control be less than reasonable industry standards. </span>
+                    </li>
+                    <li><span>Customer acknowledges and agrees that: (i) if requested by Skipjaq, Customer will share reasonable information related to the benefits it received in using the Services, including the observed or recorded improvement in the performance of Customer&rsquo;s Application after using the Services, promptly with Skipjaq&rsquo;s other customers and potential investors and (ii) Skipjaq may do the same (i.e., share such information with Skipjaq&rsquo;s other customers and potential investors), except that in no event shall Customer be required to share, or may Skipjaq share, such information with any third party that is a competitor of Customer (as determined in Skipjaq&rsquo;s sole discretion). </span>
+                    </li>
+                </ol>
+                <li><strong>INTELLECTUAL PROPERTY RIGHTS</strong></li>
+                <ol>
+                    <li><span>The Services and Software are, and at all times shall remain, the property of Skipjaq. &nbsp;Customer acknowledges that as between Customer and Skipjaq, Skipjaq is the owner of all right, title and interest, both tangible and intangible, in and to the Services and the Software and all documentation and other materials associated therewith, including all patent, copyright, trade secret, trademark, and other intellectual property rights. &nbsp;Except for the express licence granted in Section 2.1, no right, title or interest in the Services or the Software is transferred to Customer.</span>
+                    </li>
+                    <li><span>All patent, copyright, trade secret, trademark, and other intellectual property rights, and all trademarks, service marks, trade names, logos, branding and other business identifiers associated with the Services and/or the Software are owned by Skipjaq or its licensors, and no right to use any of the foregoing is granted to Customer.</span>
+                    </li>
+                </ol>
+                <li><strong>DISCLAIMER AND LIMITATION OF LIABILITY.</strong></li>
+                <ol>
+                    <li><span>THE PARTIES ACKNOWLEDGE THAT THE SERVICES AND THE SOFTWARE ARE EXPERIMENTAL IN NATURE AND THAT THE SERVICES AND THE SOFTWARE ARE PROVIDED HEREUNDER BY SKIPJAQ ON AN &ldquo;AS IS&rdquo;
+              BASIS, AND SKIPJAQ AND ITS SUPPLIERS EXPRESSLY DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, WRITTEN OR ORAL, INCLUDING BUT NOT LIMITED TO ANY WARRANTY OF AVAILABILITY OF THE SERVICES, MERCHANTABILITY, SATISFACTORY QUALITY, NONINFRINGEMENT OR FITNESS FOR PARTICULAR PURPOSE, AND ANY WARRANTIES ARISING BY STATUTE, OPERATION OF LAW, COURSE OF DEALING OR PERFORMANCE, OR USAGE OF TRADE</span><span>.</span>
+                    </li>
+                    <li><span>TO THE FULLEST EXTENT ALLOWED BY APPLICABLE LAW, UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, TORT, CONTRACT, STRICT LIABILITY, OR OTHERWISE) SHALL SKIPJAQ (OR ITS LICENSORS OR SUPPLIERS) BE LIABLE TO CUSTOMER OR TO ANY OTHER PERSON FOR ANY (I) CONSEQUENTIAL, SPECIAL, EXEMPLARY, INCIDENTAL OR INDIRECT DAMAGES OF ANY KIND, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, REVENUE, OR DATA, OR COMPUTER FAILURE OR MALFUNCTION, OR (II) DIRECT DAMAGES, IN THE AGGREGATE, IN EXCESS OF TWENTY DOLLARS ($20).</span>
+                    </li>
+                </ol>
+                <li><strong>TERM AND TERMINATION</strong></li>
+                <ol>
+                    <li>
+                        <span>This Agreement is effective as of the Effective Date and shall remain in effect until terminated in accordance with Section 7.2 &nbsp;(the &ldquo;Term&rdquo;).</span>
+                    </li>
+                    <li>Skipjaq may terminate this Agreement, with or without cause, at any time. Customer may terminate this Agreement, with or without cause,
+                        upon thirty (30) days prior written notice to Skipjaq.
+                    </li>
+                    <li>Upon termination of this Agreement for any reason, (i) the licence granted herein shall terminate, and Customer shall immediately
+                        discontinue use of the Services and the Software, and (ii) at the request of Skipjaq, Customer shall promptly return to Skipjaq or
+                        destroy all of Skipjaq&rsquo;s Confidential Information that Customer has in its possession.
+                    </li>
+                    <li>All sections of this Agreement which by their nature should survive termination will survive termination, including, without limitation,
+                        use restrictions, confidentiality obligations, intellectual property rights, warranty disclaimers, and limitations of liability. The
+                        confidentiality obligations of this Agreement will survive termination for a period of five (5) years; provided, the Receiving Party&rsquo;s
+                        obligations hereunder shall survive and continue in effect thereafter with respect to any Confidential Information that is a trade
+                        secret under applicable law. &nbsp;
+                    </li>
+                </ol>
+                <li><strong>OPEN SOURCE COMPONENTS.</strong></li>
+                <p><span class="c3">The Software may use or include one or more of the open source software components listed in the Skipjaq Open Source License Directory, which is available at http://www.skipjaq.com/oss.html. &nbsp;Please refer to the Skipjaq Open Source License Directory for the open source licence disclosures and pertinent terms.</span>
+                </p>
+                <li><strong>MISCELLANEOUS</strong></li>
+                <ol>
+                    <li><span>This Agreement constitutes the entire agreement between the parties pertaining to the subject matter hereof, and any and all written or oral agreements previously existing between the parties are expressly cancelled.</span>
+                    </li>
+                    <li><span>Customer may not assign or transfer this Agreement or any rights or obligations under it without the prior written consent of Skipjaq, except that Customer may upon written notice to Skipjaq assign or otherwise transfer its rights and obligations under this Agreement, in whole but not in part, to a successor entity pursuant to a merger, consolidation or other corporate/organizational divestiture or acquisition, provided that the assignee agrees in writing to be bound hereby. Skipjaq may assign or transfer this Agreement or any rights or obligations under it in its sole discretion. </span>
+                    </li>
+                    <li><span>No term or provision contained herein shall be deemed waived and no breach excused, and no term or provision contained herein shall be deemed modified, unless a waiver or consent to modify is obtained in writing and signed by the party against whom such waiver or consent is being enforced.</span>
+                    </li>
+                    <li><span>Neither party hereto shall be liable to the other party for any failure, delay or interruption in the performance of any of the terms or conditions contained in this Agreement due to causes reasonably beyond the control of that party.</span>
+                    </li>
+                    <li><span>Should any term of this Agreement be declared void or unenforceable by any court of competent jurisdiction, such declaration shall have no effect on the remaining terms hereof, which shall continue in full force and effect, and the void or unenforceable term shall be interpreted to give the fullest enforceable meaning consistent with the original intention of the parties.</span>
+                    </li>
+                    <li>
+                        <span>No person or entity not party to this Agreement will be deemed to be a third party beneficiary of this Agreement or any provision hereof. </span>
+                    </li>
+                    <li><span>The controlling language of this Agreement is English. &nbsp;If Customer has received a translation into another language, it has been provided for Customer&rsquo;s convenience only.</span>
+                    </li>
+                    <li><span>The limitations and disclaimers included herein are intended by the parties to be enforceable to the fullest extent permitted under applicable law, and where any such limitation or disclaimer is not permitted under applicable law without the possibility of a contractual waiver, the parties intend that applicable law be applied to give the fullest possible effect to the original intent of the parties as reflected herein.</span>
+                    </li>
+                    <li><span>Notices hereunder shall be effective upon confirmed receipt by Skipjaq at 1st Floor, 83-84 George Street, Richmond, Surrey, TW9 1HE, United Kingdom or by Customer at such address as Customer may provide in writing for purposes of notices hereunder.</span>
+                    </li>
+                    <li class="c16 c15 c14 c20"><span class="c3">This Agreement and any dispute or claim arising out of or in connection with it or its subject matter or formation (including non-contractual disputes or claims) shall be governed by the laws of the State of New York. </span>
+                    </li>
+                </ol>
+                <li><strong>DISPUTE RESOLUTION</strong></li>
+                <p>Any dispute arising from or relating to the subject matter of this Agreement that cannot be resolved thereby within a period of thirty (30)
+                    days after notice of a dispute has been given by one party hereunder to the other (the last day of such thirty (30) day period being herein
+                    referred to as the &ldquo;Arbitration Date&rdquo;), shall be finally settled by arbitration in New York, NY, using the English language in
+                    accordance with the Arbitration Rules and Procedures of the Judicial Arbitration and Mediation Services, Inc. (&ldquo;JAMS&rdquo;) then in
+                    effect, by one or more commercial arbitrator(s) with substantial experience in resolving complex commercial contract disputes, who may or
+                    may not be selected from the appropriate list of JAMS arbitrators. &nbsp;If the parties cannot agree upon the number and identity of the
+                    arbitrators within fifteen (15) days following the Arbitration Date, then a single arbitrator shall be selected on an expedited basis in
+                    accordance with the Arbitration Rules and Procedures of JAMS. &nbsp;Any arbitrator so selected shall have substantial experience in the
+                    software industry. &nbsp;The arbitrator(s) shall have the authority to grant specific performance and to allocate between the parties the
+                    costs of arbitration (including service fees, arbitrator fees and all other fees related to the arbitration) in such equitable manner as the
+                    arbitrator(s) may determine. &nbsp;The prevailing party in the arbitration shall be entitled to receive reimbursement of its reasonable
+                    expenses (including reasonable attorneys&rsquo;
+                    fees, expert witness fees and all other expenses) incurred in connection therewith. &nbsp;Judgment upon the award so rendered may be entered
+                    in a court having jurisdiction or application may be made to such court for judicial acceptance of any award and an order of enforcement, as
+                    the case may be. &nbsp;Notwithstanding the foregoing, each party shall have the right to institute an action in a court of proper
+                    jurisdiction for preliminary injunctive relief pending a final decision by the arbitrator(s), provided that a permanent injunction and
+                    damages shall only be awarded by the arbitrator(s).
+                </p>
+            </ol>
+            <p class="text-center">EXHIBIT A</p>
+            <p>
+                <span class="underline">Description of Services and Software</span>: A service, served from the <span><a
+                    href="http://skipjaq.io/">skipjaq.io</a></span> <span>Internet domain, that takes the Application, measures its performance on a specific AWS instance type, experiments with tuning settings (collectively, an &ldquo;Optimization Test&rdquo;) and then returns recommendations regarding tuning parameters expected to increase the Application&rsquo;s performance when running on that same AWS instance type.</span>
+            </p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="footer">
+        <button class="btn btn-info" onclick="$('#terms').modal('hide')">Close</button>
+        <div class="clear-fix"></div>
+    </div>
+</div>
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script>
+    new WOW().init();
+</script>
+
+<script type="text/javascript" src="/js/page_common-ac60ace131e7dbfcc5d053df48035f14.js"></script>
+</html>
